@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Product Finder</title>
+
+<!-- Google Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #020617;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    background: linear-gradient(to right, #38bdf8, #a78bfa);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+/* SEARCH */
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+input {
+    padding: 12px;
+    width: 260px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #38bdf8;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+/* FEATURES */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    width: 200px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: #334155;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🛍️ SmartShop</div>
+</header>
+
+<section class="hero">
+    <h1>Find Anything You Want</h1>
+    <p>Search products instantly and shop on Amazon</p>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <button onclick="searchProduct()">Search</button>
+    </div>
+</section>
+
+<section class="features">
+
+    <div class="card">
+        <span class="material-symbols-outlined icon" style="color:#facc15;">search</span>
+        <h3>Smart Search</h3>
+        <p>Find products quickly</p>
+    </div>
+
+    <div class="card">
+        <span class="material-symbols-outlined icon" style="color:#4ade80;">shopping_cart</span>
+        <h3>Easy Shopping</h3>
+        <p>Go directly to Amazon</p>
+    </div>
+
+    <div class="card">
+        <span class="material-symbols-outlined icon" style="color:#38bdf8;">bolt</span>
+        <h3>Fast</h3>
+        <p>Quick and smooth experience</p>
+    </div>
+
+    <div class="card">
+        <span class="material-symbols-outlined icon" style="color:#fb7185;">devices</span>
+        <h3>Responsive</h3>
+        <p>Works on all devices</p>
+    </div>
+
+</section>
+
+<footer>
+    <p>Made with ❤️ by You</p>
+</footer>
+
+<script>
+function searchProduct() {
+    let query = document.getElementById("searchInput").value;
+    if(query.trim() === "") {
+        alert("Please enter a product!");
+        return;
+    }
+
+    let url = "https://www.amazon.in/s?k=" + encodeURIComponent(query);
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
